@@ -1,0 +1,11 @@
+# Java compiled files
+*.class
+
+# Windows junk
+Thumbs.db
+Desktop.ini
+
+# Neovim/Editor junk
+.vscode/
+.idea/
+*.swp
