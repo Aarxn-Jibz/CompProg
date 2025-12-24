@@ -10,28 +10,22 @@ public class Main {
       String line = sc.next();
       char dir = line.charAt(0);
       int n = Integer.parseInt(line.substring(1));
-      if (dir == 'R') {
-        if(n > 99)
-      {
-          c += n / 100;
-          n = n - ((n / 100) * 100);
+      for (int i = 0; i < n; i++) {
+        if (dir == 'R') {
+          ++num;
+          if (num == 100) {
+            c++;
+            num = 0;
+          }
+        } else {
+          --num;
+          if (num == 0) {
+            c++;
+          }
+          if (num == -1) {
+            num = 99;
+          }
         }
-        num += n;
-        if (num == 100 || num > 100) {
-          c++;
-        }
-        num = num % 100;
-      } else {
-        if(n > 99)
-      {
-          c += n / 100;
-          n = n - ((n / 100) * 100);
-        }
-        num -= n;
-        if (num == 0 || num < 0) {
-          c++;
-        }
-        num = (num + 100) % 100;
       }
     }
     System.out.println(c);
