@@ -9,14 +9,16 @@ public class Main {
     int t = sc.nextInt();
     for (int i = 0; i < t; i++) {
       int n = sc.nextInt();
-      int a = (n % 10) + ((n / 10) % 10) + ((n / 100) % 10);
-      n = n / 1000;
-      int b = (n % 10) + ((n / 10) % 10) + ((n / 100) % 10);
-      if (a == b) {
-        System.out.println("YES");
-      } else {
-        System.out.println("NO");
+      int ar[] = new int[n];
+      for (int j = 0; j < n; j++) {
+        ar[j] = sc.nextInt();
       }
+      Arrays.sort(ar);
+      int c = 0;
+      for (int j = 1; j < n; j++) {
+        c += (ar[j] - ar[0]);
+      }
+      System.out.println(c);
     }
   }
 }
